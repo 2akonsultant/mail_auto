@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">BookFlow</a>
+      <nav class="nav">
+        <span id="userInfo" class="user-info hidden"></span>
+        <button type="button" id="loginBtn" class="btn btn-ghost">Sign in</button>
+        <button type="button" id="logoutBtn" class="btn btn-ghost hidden">Log out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1>Book services in a few clicks</h1>
+        <p>Browse our services and book instantly. Sign in with Google for a faster experience.</p>
+      </div>
+    </section>
+
+    <section class="services container" id="servicesSection">
+      <h2>Our services</h2>
+      <div class="services-grid" id="servicesGrid"></div>
+    </section>
+  </main>
+
+  <div id="bookingModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button type="button" class="modal-close" aria-label="Close">&times;</button>
+      <h3>Book: <span id="modalServiceName"></span></h3>
+      <form id="bookingForm">
+        <input type="hidden" id="bookingServiceId" />
+        <label>
+          Your Name
+          <input type="text" id="bookingName" placeholder="Enter your name" required />
+        </label>
+        <label>
+          Your Email
+          <input type="email" id="bookingEmail" placeholder="your.email@example.com" required />
+        </label>
+        <label>
+          Date
+          <input type="date" id="bookingDate" required />
+        </label>
+        <label>
+          Time
+          <input type="time" id="bookingTime" required />
+        </label>
+        <label>
+          Notes (optional)
+          <textarea id="bookingNotes" rows="2" placeholder="Any special requests..."></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/script.js"></script>
+</body>
+</html>
